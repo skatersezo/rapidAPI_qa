@@ -1,0 +1,75 @@
+# https://rapidapi.com/SAdrian/api/moviesdatabase
+@baseUrl = https://moviesdatabase.p.rapidapi.com
+@apiKey = 0027390ea1msh969f223bc3135f7p1392aajsn24a59c70b4de
+@titleId = tt0001539
+@page = 5
+# Values: movie, musicVideo, podcastEpisode, podcastSeries, short, tvEpisode, tvMiniSeries, tvMovie, tvPilot, tvSeries, tvShort, tvSpecial, video, videoGame
+@titleType = musicVideo
+# Values: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary, Drama, Family, Fantasy, Film-Noir, Game-Show, History, Horror, Music, Musical, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western
+@genre = Drama
+# Values: most_pop_movies, most_pop_series, top_boxoffice_200, top_boxoffice_last_weekend_10, top_rated_250, top_rated_english_250, top_rated_lowest_100, top_rated_series_250, titles (default)
+@list = top_boxoffice_200
+# Values: year.incr, year.decr
+@sort = year.incr
+# Values: [1...50]
+@limit = -15
+@year = 2000
+# Values: base_info, mini_info, image, creators_directors_writers, revenue_budget, extendedCast, rating, awards
+@info = revenue_budget
+@startYear = 1999
+@endYear = 2001
+
+
+### Get all titles
+GET {{baseUrl}}/titles HTTP/1.1
+X-Rapidapi-Key: {{apiKey}}
+
+
+### Get title by id
+GET {{baseUrl}}/titles/{{titleId}} HTTP/1.1
+X-Rapidapi-Key: {{apiKey}}
+
+
+### Get all titles for page
+GET {{baseUrl}}/titles?page={{page}} HTTP/1.1
+X-Rapidapi-Key: {{apiKey}}
+
+
+### Get all titles for type
+GET {{baseUrl}}/titles?titleType={{titleType}} HTTP/1.1
+X-Rapidapi-Key: {{apiKey}}
+
+
+### Get all titles for genre
+GET {{baseUrl}}/titles?genre={{genre}} HTTP/1.1
+X-Rapidapi-Key: {{apiKey}}
+
+
+### Get all titles for list
+GET {{baseUrl}}/titles?list={{list}} HTTP/1.1
+X-Rapidapi-Key: {{apiKey}}
+
+
+### Get all titles and sort
+GET {{baseUrl}}/titles?sort={{sort}} HTTP/1.1
+X-Rapidapi-Key: {{apiKey}}
+
+
+### Get all titles and sets a limit per page
+GET {{baseUrl}}/titles?limit={{limit}} HTTP/1.1
+X-Rapidapi-Key: {{apiKey}}
+
+
+### Get all titles by release year
+GET {{baseUrl}}/titles?year={{year}} HTTP/1.1
+X-Rapidapi-Key: {{apiKey}}
+
+
+### Get all titles and sets info type structure
+GET {{baseUrl}}/titles?info={{info}} HTTP/1.1
+X-Rapidapi-Key: {{apiKey}}
+
+
+### Get all titles by year range
+GET {{baseUrl}}/titles?startYear={{startYear}}&endYear={{endYear}} HTTP/1.1
+X-Rapidapi-Key: {{apiKey}}
